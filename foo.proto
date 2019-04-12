@@ -1,0 +1,50 @@
+syntax = "proto2";
+package Foo;
+
+enum Corpus {
+    UNIVERSAL = 0;
+    WEB = 1;
+    IMAGES = 2;
+    LOCAL = 3;
+    NEWS = 4;
+    PRODUCTS = 5;
+    VIDEO = 6;
+}
+
+enum Color {
+    RED = 0;
+    GREEN = 1;
+    BLUE = 2;
+}
+
+message Inner1 {
+    optional string my1_name = 1;
+}
+
+message Inner2 {
+    optional string my2_name = 1;
+    optional Inner1 my2_inner1 = 2;
+}
+
+message Outer {
+    optional double my_double = 1;
+    optional float my_float = 2;
+    optional int64 my_int64 = 3;
+    optional uint64 my_uint64 = 4;
+    optional int32 my_int32 = 5;
+    optional fixed64 my_fixed64 = 6;
+    optional fixed32 my_fixed32 = 7;
+    optional bool my_bool = 8;
+    optional string my_string = 9;
+    optional Inner2 my_inner2 = 11;
+    optional bytes my_bytes = 12;
+    optional uint32 my_uint32 = 13;
+    optional Color my_enum_color = 14;
+    optional sfixed32 my_sfixed32 = 15;
+    optional sfixed64 my_sfixed64 = 16;
+    optional sint32 my_sint32 = 17;
+    optional sint64 my_sint64 = 18;
+    repeated int32 my_repeated_int32 = 19;
+    repeated Corpus my_repeated_corpus = 20;
+    repeated Inner1 my_repeated_inner1 = 21;
+}
